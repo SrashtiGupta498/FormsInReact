@@ -26,9 +26,9 @@ const validateForm = () => {
     setError(newErrors);
 
     if (newErrors.length === 0) {
-      console.log("✅ Form submitted successfully!", data);
+      console.log("Form submitted successfully!", data);
     } else {
-      console.log("❌ Validation errors:", newErrors);
+      console.log("Validation errors:", newErrors);
     }
   };
 
