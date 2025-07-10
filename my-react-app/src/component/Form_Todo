@@ -1,12 +1,10 @@
 import { useState } from "react";
-
 const Form = () =>{
 const [ data , setData] = useState({firstName :"" , lastName:"", email:"", contact:"",gender:"", Tech:[Backend=true , Frontend= true] , selectedTech:""});
 const [ error , setError ]  = useState([]);
  const [ saveData ,setSaveData] = useState([]);
 const validateForm = () => {
     const newErrors = [];
-
     if (data.firstName === "") {
       newErrors.push("Please fill First Name");
     }
@@ -95,18 +93,15 @@ const SaveFormData = () =>{
             ))}  
             </select>
             <button type="button" onClick={SaveFormData}> SaveData </button>
-
-                    {error.length > 0 && (
+            {error.length > 0 && (
           <ul style={{ color: "red" }}>
             {error.map((err, idx) => (
               <li key={idx}>{err}</li>
             ))}
           </ul>
         )}
-
         </div>
         </form >
-      
         {saveData.map( (Data) =>(
         <div className = "Form Data">
             <p>{Data.firstName}</p>
@@ -117,8 +112,6 @@ const SaveFormData = () =>{
             <p>{Data.selectedTech}</p>
         </div>
         ))}
-          </>
-    )
-}
+          </>)}
 
 export default Form;
